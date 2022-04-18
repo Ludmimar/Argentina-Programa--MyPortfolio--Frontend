@@ -1,0 +1,137 @@
+<header>    
+        <div class="card-container">           
+            <div class="social-network-header">
+              <a href="#"> <!--link para llevarlo a las redes sociales-->
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin-in  "></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+            <div class="img-fondo"> 
+              <img [src]="persona.backImage" class="img-fluid" alt="Portada">
+            </div>
+            <div class="photo">
+              <img [src]="persona.image" class="circular--square"  alt="Foto de perfil de Ludmila Martos">
+            </div>
+           
+            <div class="personal-data-container">
+              <h1 id="fullname" class="titulo">{{persona.lastname}} {{persona. name}}</h1>                             
+              <div class="divider"></div>
+              <p id="position">{{persona.position}}</p> 
+              <p id="ubication">{{persona.ubication}}</p>
+              <p id="dateOfBirth">Fecha de nacimiento: {{persona.dateOfBirth}}</p>
+              <p id="mail">{{persona.mail}}</p>
+              <button *ngIf="usuarioAutenticado" class="btn" data-bs-toggle="modal" 
+              data-bs-target="#modalEncabezado" (click)="mostrarDatosEncabezado()">Editar</button>                
+            </div>    
+        </div>     
+    </header> 
+
+    
+    <div  class="acerca-de">
+      <img [src]="persona.aboutMeImg" alt="ludmila martos retrato">  
+      <div class="acerca-de-info">
+        <h2>Acerca de</h2>
+        <div class="divider"></div>
+        <p>{{persona.aboutMe}}</p>          
+      </div>
+    </div>
+
+ <!-- Modal -->
+  <div class="modal fade" id="modalEncabezado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Pagina Principal</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div> 
+        <div class="modal-body">
+            <div class="modal-body">
+                <form [formGroup]="form">
+                    <div class="mb-3"> 
+                      <label for="lastname" class="form-label">Apellido</label>
+                      <input type="text" class="form-control" id="lastname" formControlName="lastname"> 
+                      <div *ngIf="lastname?.invalid && (lastname?.dirty || lastname?.touched)">
+                        <div *ngIf="lastname?.errors?.['required']" class="text-danger">
+                            El Apellido es  Obligatorio.
+                        </div>
+                      </div>
+                      <label for="name" class="form-label">Nombre</label>
+                      <input type="text" class="form-control" id="name" formControlName="name"> 
+                      <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+                        <div *ngIf="name?.errors?.['required']" class="text-danger">
+                          El Nombre es  Obligatorio.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="position" class="form-label">Posición</label>
+                      <input type="text" class="form-control" id="position" formControlName="position">
+                    </div>
+                    <div class="mb-3">
+                      <label for="ubication" class="form-label">Lugar de Residencia</label>
+                      <input type="text" class="form-control" id="ubication" formControlName="ubication">
+                    </div>
+                    <div class="mb-3">
+                      <label for="image" class="form-label">URL de la imagen de Perfil</label> 
+                      <input type="text" class="form-control" id="image" formControlName="image">
+                      <!--aca usamos las cajas de ngIf para que se muestren o no los msj abajo de la caja-->
+                      <div *ngIf="image?.invalid && (image?.dirty || image?.touched)">
+                        <div *ngIf="image?.errors?.['required']" class="text-danger">
+                          La url es obligatoria.
+                        </div>
+                      <div *ngIf="image?.errors?.['pattern']" class="text-danger">
+                        El  formato de la url no es válida.
+                      </div>
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="image" class="form-label">URL de la imagen de Portada</label> 
+                      <input type="text" class="form-control" id="backImage" formControlName="backImage">
+                      <!--aca usamos las cajas de ngIf para que se muestren o no los msj abajo de la caja-->
+                      <div *ngIf="backImage?.invalid && (backImage?.dirty || backImage?.touched)">
+                        <div *ngIf="backImage?.errors?.['required']" class="text-danger">
+                          La url es obligatoria.
+                        </div>
+                      <div *ngIf="backImage?.errors?.['pattern']" class="text-danger">
+                        El  formato de la url no es válida.
+                      </div>
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="mail" class="form-label">Email</label>
+                      <input type="text" class="form-control" id="mail" formControlName="mail">
+                    </div>
+                    <div class="mb-3">
+                      <label for="aboutMe" class="form-label">Acerca de</label>
+                      <textarea class="form-control" id="aboutMe" rows="3" formControlName="aboutMe"></textarea>                      
+                    </div>
+                    <div class="mb-3">
+                      <label for="aboutMeImg" class="form-label">URL de la imagen Sobre mi</label> 
+                      <input type="text" class="form-control" id="aboutMeImg" formControlName="aboutMeImg">
+                      <!--aca usamos las cajas de ngIf para que se muestren o no los msj abajo de la caja-->
+                      <div *ngIf="aboutMeImg?.invalid && (aboutMeImg?.dirty || aboutMeImg?.touched)">
+                        <div *ngIf="aboutMeImg?.errors?.['required']" class="text-danger">
+                          La url es obligatoria.
+                        </div>
+                      <div *ngIf="aboutMeImg?.errors?.['pattern']" class="text-danger">
+                        El  formato de la url no es válida.
+                      </div>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cerrarModalEncabezado" class="btn btn-secondary" data-bs-dismiss="modal"> Salir </button>
+          <button type="button" class="btn btn-primary" (click)="guardarEncabezado()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+

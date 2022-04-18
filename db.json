@@ -1,0 +1,133 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "fullName": "Ludmila Anahi Martos",
+      "position": "Programador Web Fullstack",
+      "ubication": "Córdoba (Argentina)",
+      "image": "https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg",
+      "dateOfBirth": "16/11/1989",
+      "mail": "ludmilamartos",
+      "id": 2
+    },
+    {
+      "fullName": "Ludmila Anahi Martos",
+      "position": "Programador Web Fullstack",
+      "ubication": "Córdoba (Argentina)",
+      "image": "https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg",
+      "dateOfBirth": "16/11/1989",
+      "mail": "ludmilamartos@gmail.com",
+      "id": 3
+    },
+    {
+      "fullName": "Ludmila Martos",
+      "position": "Programador ",
+      "ubication": "Córdoba (Argentina)",
+      "image": "https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg",
+      "dateOfBirth": "16/11/1989",
+      "mail": "ludmilamartos@gmail.com",
+      "id": 4
+    },
+    {
+      "fullName": "Ludmila Anahi Martos",
+      "position": "Programador Web Fullstack",
+      "ubication": "Córdoba (Argentina)",
+      "image": "https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg",
+      "dateOfBirth": "16/11/1989",
+      "mail": "ludmilamartos@gmail.com",
+      "id": 5
+    },
+    {
+      "fullName": "Ludmila Anahi Martos",
+      "position": "Programador Web Fullstack",
+      "ubication": "Córdoba (Argentina)",
+      "image": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+      "dateOfBirth": "16/11/1989",
+      "mail": "ludmilamartos@gmail.com",
+      "aboutMe": "soy Ludmila, Desarrolladora Web Fullstack. Mi relación con la programacion comenzó a una edad temprana y se ha convertido en el amor de toda la vida. En este sitio web, descubrirás algunos de los proyectos en los que he participado hasta la fecha. ",
+      "id": 6
+    },
+    {
+      "fullName": " Desarrolladora Web Fullstack. Mi relación con la programacion comenzó a una edad temprana y se ha convertido en el amor de toda la vida. En este sitio web, descubrirás algunos de los proyectos en los que he participado hasta la fecha. ",
+      "id": 7
+    },
+    {
+      "fullName": " Desarrolladora Web Fullstack. Mi relación con la programacion comenzó a una edad temprana y se ha convertido en el amor de toda la vida. En este sitio web, descubrirás algunos de los proyectos en los que he participado hasta la fecha. ",
+      "id": 8
+    },
+    {
+      "fullName": "Hola, soy Ludmila,  Fullstack. Mi relación con la programacion comenzó a una edad temprana y se ha convertido en el amor de toda la vida. En este sitio web, descubrirás algunos de los proyectos en los que he participado hasta la fecha. ",
+      "id": 9
+    },
+    {
+      "fullName": "Hola, soy Ludmila, Desarrolladora Web Fullstack. ",
+      "id": 10
+    },
+    {
+      "fullName": "Ludmila Anahi Martos",
+      "position": "Programador ",
+      "ubication": "Córdoba ",
+      "image": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+      "dateOfBirth": "16/11/1989",
+      "mail": "ludmilamartos@gmail.com",
+      "aboutMe": "Hola, soy Ludmila, Desarrolladora Web Fullstack. Mi relación con la programacion comenzó a una edad temprana y se ha convertido en el amor de toda la vida. En este sitio web, descubrirás algunos de los proyectos en los que he participado hasta la fecha. ",
+      "id": 11
+    },
+    {
+      "fullName": "Hola,relación con la programacion comenzó a una edad temprana y se ha convertido en el amor de toda la vida. En este sitio web, descubrirás algunos de los proyectos en los que he participado hasta la fecha. ",
+      "id": 12
+    },
+    {
+      "fullName": "Ludmila, Desarrolladora Web Fullstack. Mi relación con la programacion comenzó a una edad temprana y se ha convertido en el amor de toda la vida. En este sitio web, descubrirás algunos de los proyectos en los que he participado hasta la fecha. ",
+      "id": 13
+    },
+    {
+      "fullName": "udmila, Desarrolladora Web Fullstack. Mi relación con la programacion comenzó a una edad temprana y se ha convertido en el amor de toda la vida. En este sitio web, descubrirás algunos de los proyectos en los que he participado hasta la fecha. ",
+      "id": 14
+    },
+    {
+      "fullName": "Ludmila Anahi Martos",
+      "position": "Programador Web Fullstack",
+      "ubication": "Córdoba (Argentina)",
+      "image": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+      "dateOfBirth": "16/11/1989",
+      "mail": "ludmilamartos@gmail.com",
+      "aboutMe": "Desarrolladora Web Fullstack. Mi relación con la programacion comenzó a una edad temprana y se ha convertido en el amor de toda la vida. En este sitio web, descubrirás algunos de los proyectos en los que he participado hasta la fecha. ",
+      "id": 15
+    },
+    {
+      "fullName": "Ludmila Anahi Martos",
+      "position": "Programador Web Fullstack",
+      "ubication": "Córdoba (Argentina)",
+      "image": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+      "dateOfBirth": "16/11/1989",
+      "mail": "ludmilamartos@gmail.com",
+      "aboutMe": " Ludmila, Desarrolladora Web Fullstack. Mi relación con la programacion comenzó a una edad temprana y se ha convertido en el amor de toda la vida. En este sitio web, descubrirás algunos de los proyectos en los que he participado hasta la fecha. ",
+      "id": 16
+    },
+    {
+      "fullName": "Ludmila Anahi Martos",
+      "position": "Programador Web Fullstack",
+      "ubication": "Córdoba (Argentina)",
+      "image": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+      "dateOfBirth": "16/11/1989",
+      "mail": "ludmilamartos@gmail.com",
+      "aboutMe": " Desarrolladora Web Fullstack. Mi relación con la programacion comenzó a una edad temprana y se ha convertido en el amor de toda la vida. En este sitio web, descubrirás algunos de los proyectos en los que he participado hasta la fecha. ",
+      "id": 17
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

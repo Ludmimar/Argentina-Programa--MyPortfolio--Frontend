@@ -1,0 +1,50 @@
+.footer {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 15vw;
+    background-color: rgb(253, 215, 241);   
+}
+
+ .footer-content {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content h1 {
+    font-size: 2.5vw;
+}
+
+.footer-content h2 {
+     font-size: 1.5vw;
+}
+
+.social-network i {
+    font-size: 2vw;    
+  }
+  
+.social-network {
+    display: flex; 
+    align-items: center;  
+    justify-content: space-evenly;   
+    width: 30vw;
+    margin-top: 1vw;
+}
+  
+.social-network a {
+    color: rgb(105, 2, 109);
+    border: none;
+    background-color: rgb(255, 255, 255);
+    padding: 1vw;
+    border-radius: 10px;
+}
+  
+.social-network a:hover {
+    background-color: rgb(243, 106, 106); 
+    color: black; 
+    transition: ease-in .4s; 
+}

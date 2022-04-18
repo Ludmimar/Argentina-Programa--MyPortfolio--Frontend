@@ -1,0 +1,38 @@
+.img-logo{
+  display:flex;
+  position: absolute;
+  height: 4vw;
+}
+
+.navbar { 
+  height: 4vw;
+  display: flex;    
+  justify-content: flex-end;
+}
+
+.menu { 
+  font-size: 1.5vw;
+  display: flex;  
+  align-content: center; 
+  margin-top:-0.5vw;
+}
+
+.menu li {
+  padding: 1vw;
+  list-style: none;  
+}
+
+.menu a {    
+  color: hsl(300, 43%, 27%);  
+  text-decoration: none;
+  padding: 10px 10px; 
+  border-radius: 25px;
+  background-color: rgb(253, 215, 241);
+}
+
+.menu a:hover {
+  background-color: rgb(243, 106, 106); 
+  color: black; 
+  transition: ease-in .4s; 
+  border-radius: 25px;
+}

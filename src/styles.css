@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+/********************** ENCABEZADO ****************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Spartan', sans-serif;
+    color: hsl(300, 43%, 27%);
+  }
+ /* header */
+ 
+  
+
+.personal-data-container  button,
+.acerca-de button,
+.educacion button,
+.contact-form button,
+.proyecto button  { 
+    width: 6vw;
+    padding: 0.3vw;
+    font-size: 1.5vw;
+    background-color: rgb(238, 139, 217);    
+    border: none;
+    border-radius: 10px;
+    margin-top: 0.5vw; 
+    cursor: pointer;
+  }
+
+  .personal-data-container  button:hover,
+  .acerca-de button:hover,
+  .educacion button:hover,
+  .contact-form button:hover,
+  .proyecto button:hover  {
+    background-color: rgb(236, 169, 214);
+    box-shadow: 5px 15px 25px 1px rgb(247, 0, 255);
+  }
+
+.divider {
+  height: 0.4vw;
+  width: 10vw;
+  background-color: rgb(202, 135, 204);
+  margin-top: 0.5vw;
+  margin-bottom: 1.5vw; 
+}

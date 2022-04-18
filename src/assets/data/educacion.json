@@ -1,0 +1,34 @@
+{
+	"education": [
+		{
+			"school": "UTN",
+			"title": "Tecnicatura en programacion",
+			"img": "./assets/imagenes/utn.png",
+			"career": "Analista de sistemas"
+		},
+		{
+			"school": "Argentina Programa",
+			"title": "Programador Web FullStack",
+			"img": "./assets/imagenes/ArgProg.jpg",
+			"career": "Desarrollo de Software"			
+		},
+		{
+			"school": "Argentina Programa",
+			"title": "Programador Web FullStack",
+			"img": "./assets/imagenes/proyect.jpg",
+			"career": "Desarrollo de Software"
+		},
+		{
+			"school": "Argentina Programa",
+			"title": "Programador Web FullStack",
+			"img": "./assets/imagenes/utn.png",
+			"career": "Desarrollo de Software"
+		},
+		{
+			"school": "Argentina Programa",
+			"title": "Programador Web FullStack",
+			"img": "./assets/imagenes/ArgProg.jpg",
+			"career": "Desarrollo de Software"
+		}					
+	]
+}

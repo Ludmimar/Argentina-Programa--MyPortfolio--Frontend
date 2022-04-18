@@ -1,0 +1,41 @@
+{
+	"proyect": [
+		{
+			"referency": "Pagina web",
+			"img": "./assets/imagenes/proyect.jpg",
+			"lenguage": "html, Css, Java, Angular, Sql",
+			"url": "https://github.com/Ludmimar"
+		},
+		{
+			"referency": "Aplicacion android",
+			"img": "./assets/imagenes/proyect.jpg",
+			"lenguage": "html, Css, Java, Angular, Sql",
+			"url": "https://github.com/Ludmimar"
+		},	
+		{
+			"referency": "Aplicacion android",
+			"img": "./assets/imagenes/proyect.jpg",
+			"lenguage": "html, Css, Java, Angular, Sql",
+			"url": "https://github.com/Ludmimar"
+		},	
+		{
+			"referency": "Aplicacion android",
+			"img": "./assets/imagenes/proyect.jpg",
+			"lenguage": "html, Css, Java, Angular, Sql",
+			"url": "https://github.com/Ludmimar"
+		},	
+		{
+			"referency": "Aplicacion android",
+			"img": "./assets/imagenes/proyect.jpg",
+			"lenguage": "html, Css, Java, Angular, Sql",
+			"url": "https://github.com/Ludmimar"
+		},	
+		{
+			"referency": "Aplicacion android",
+			"img": "./assets/imagenes/proyect.jpg",
+			"lenguage": "html, Css, Java, Angular, Sql",
+			"url": "https://github.com/Ludmimar"
+		}		
+			
+	]
+}

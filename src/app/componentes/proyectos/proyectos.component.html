@@ -1,0 +1,28 @@
+<a name="ancla3" id="ancla3"></a> 
+    <div class="proyecto">
+      <div class="proyecto-cabecera">
+        <h2>Proyectos</h2>
+        <div class="divider"></div>
+      </div>
+      <button class="btn">Agregar</button> 
+      <div class="container-proyecto">        
+        <div *ngFor="let item of proyecto">
+            <div class="card-proyecto">
+              <img [src]="item.img"  alt="">            
+            <div class="card__title-proyecto">
+              <h2>{{item.referency}}</h2>              
+              <p>{{item.lenguage}}</p>
+              <div class="social">
+                <a href="{{item.url}}">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>                                      
+            </div> 
+            <div class="botones">
+              <button class="btn">Editar</button> 
+              <button class="btn">Elminar</button>        
+            </div> 
+           </div>
+        </div>       
+      </div>
+    </div>

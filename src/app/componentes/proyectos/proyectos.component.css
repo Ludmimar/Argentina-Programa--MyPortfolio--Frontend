@@ -1,0 +1,85 @@
+.proyecto {
+    background-color: rgb(255, 255, 255);   
+    width: 100vw;
+    height: 70vw;
+    overflow: hidden; 
+    position: relative;
+}
+
+.proyecto-cabecera {
+    width: 100vw;  
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    padding: 2vw;
+}
+  
+.proyecto-cabecera h2 {
+    font-size: 3vw;
+}
+  
+.container-proyecto {
+    display: flex; 
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3vw 1vw;    
+}
+  
+.card-proyecto {
+    width: 20vw; 
+    height: 20vw;
+    background-color: #dba6fa;
+    margin: 1vw;
+}
+  
+.card-proyecto img {
+    width:20vw; 
+    height: 10vw;
+}
+  
+.card__title-proyecto {
+    padding: 1vw;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+.card__title-proyecto h2 {
+    font-size: 1.5vw;
+}
+  
+.card__title-proyecto p {
+    font-size: 1vw;
+}
+  
+.botones {
+    display: flex;
+    align-items: center;  
+    margin-left: 4vw;
+}
+
+.social {
+    display: flex; 
+    align-items: center;  
+    justify-content: space-evenly;
+    margin-top: -0.5vw;
+}
+
+.social a {
+    color: rgb(105, 2, 109);
+    border: none;
+    background-color: rgb(253, 215, 241);
+    padding: 0.5vw;
+    border-radius: 10px;
+}
+  
+.social a:hover {
+    background-color: rgb(243, 106, 106); 
+    color: black; 
+    transition: ease-in .4s; 
+}
+
+.social i {
+    font-size: 2vw;
+  }

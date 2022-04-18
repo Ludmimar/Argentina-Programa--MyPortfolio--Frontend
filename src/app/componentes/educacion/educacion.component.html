@@ -1,0 +1,22 @@
+<div class="educacion">
+      <div class="educacion-cabecera">
+        <h2>Educacion</h2>
+        <div class="divider"></div>
+      </div>
+      <button class="btn">Agregar</button> 
+      <div class="container-educacion">        
+        <div *ngFor="let item of educacion">
+            <div class="card-educacion">
+              <img [src]="item.img"  alt="">            
+            <div class="card__title-educacion">
+              <h2>{{item.school}}</h2>              
+              <p>{{item.title}}</p>
+              <p>{{item.career}}</p>
+           </div>
+           <div class="botones-educ">
+            <button class="btn">Editar</button> 
+            <button class="btn">Eliminar</button>        
+          </div> 
+        </div>          
+      </div>
+    </div>
