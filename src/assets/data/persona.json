@@ -5,13 +5,13 @@
 			"lastname":"Martos",
 			"dateOfBirth": "16/11/1989",
 			"aboutMe": "Hola, soy Ludmila, Desarrolladora Web Fullstack. Mi relación con la programacion comenzó a una edad temprana y se ha convertido en el amor de toda la vida. En este sitio web, descubrirás algunos de los proyectos en los que he participado hasta la fecha. ",
-			"aboutMeImg":"https://scontent.fcor10-3.fna.fbcdn.net/v/t39.30808-6/278856653_10221318333092613_5892941633234807063_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeG6zV_6lzKXUu_Bi7n9rulIYvNf0uQoFABi81_S5CgUAFMedKZfa2B-mNauDdoOmA0&_nc_ohc=Cb9ycE04ifoAX8kquw6&_nc_ht=scontent.fcor10-3.fna&oh=00_AT-_DUGh676GCOKO77NVaplUZ2P5NE0Ldh9vG13L8bkTvw&oe=62637648",
+			"aboutMeImg":"https://github.com/Ludmimar/MyPortfolio/blob/master/src/assets/imagenes/acercaDe.jpg?raw=true",
 			"mail": "ludmilamartos@gmail.com",
-			"backImage": "https://miro.medium.com/max/1400/1*Hy-RTBZiiqFH9sLHZKDRlQ.png",
-			"image": "https://scontent.fcor10-3.fna.fbcdn.net/v/t39.30808-6/278493368_10221318299331769_4820218779284903016_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeEzYhKgdI5x1O_w9hlZorAkphKQwGi_NTemEpDAaL81N1SmXjsvF3UqPIhG5dUX-ss&_nc_ohc=7EpJjcgf4HUAX9FPVtP&_nc_ht=scontent.fcor10-3.fna&oh=00_AT_Iig3Y77-wrsO_jPVHXkiaVYL3uLpP4C6eIU0AksqxOg&oe=62621C1B",
+			"backImage": "https://github.com/Ludmimar/MyPortfolio/blob/master/src/assets/imagenes/Fullstack.png?raw=true",
+			"image": "https://github.com/Ludmimar/MyPortfolio/blob/master/src/assets/imagenes/perfil1.png?raw=true",
 			"position": "Programador Web Fullstack",
 			"ubication": "Córdoba (Argentina)",
-			"logoArgProg": "https://scontent.fcor10-3.fna.fbcdn.net/v/t39.30808-6/278772098_10221318362413346_4562891133962515038_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeE5-zHaOsl3EEBDA7uLZopMUcBDp-rMeolRwEOn6sx6iavl4woDuISDr63Rd6dC3EI&_nc_ohc=ookP9umtKfMAX8uUTy9&tn=ZCPyAmdY7Lbsm_fJ&_nc_ht=scontent.fcor10-3.fna&oh=00_AT_IWQp9z8-dSuAiSd0pB3ezolgodyhzQDa61CL5yr98Yw&oe=62622D8B"
+			"logoArgProg": "https://github.com/Ludmimar/MyPortfolio/blob/master/src/assets/imagenes/logoAP.png"
 		}
 	
 }

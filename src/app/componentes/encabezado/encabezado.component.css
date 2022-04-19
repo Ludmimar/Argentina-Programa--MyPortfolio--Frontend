@@ -1,20 +1,20 @@
 .card-container  {
   background-color: rgb(253, 215, 241);   
   width: 100vw;
-  height: 55vw;
+  height: 65vw;
   overflow: hidden; 
   position: relative; 
 }
 
 .img-fondo img {
   width: 100vw;
-  height:30vw; 
+  height:38vw; 
 }
 
 .photo{
   position: absolute;
   width:50vw;
-  top: 25vw;
+  top: 35vw;
   left: 4vw;     
 }
 
@@ -46,7 +46,7 @@
   font-size: 1.5vw;
   display: flex;    
   position: absolute;
-  top: 30vw;
+  top: 35vw;
   flex-direction: column;
   left: 20vw;
 }
