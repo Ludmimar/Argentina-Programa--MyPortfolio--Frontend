@@ -7,14 +7,16 @@ import { Persona } from '../entidades/persona';
   providedIn: 'root'
 })
 export class PersonaService {
-  constructor(private http:HttpClient) { 
-    console.log("El servicio mi portfolio esta corriendo");
+  url:string="http://localhost:8080/persona";
+  constructor(private http:HttpClient) {    
+
+    console.log("El servicio de persona esta corriendo");
   }
 
-  obtenerDatosPersona():Observable<any>{
-    return this.http.get('./assets/data/persona.json');
+  obtenerDatosPersona():Observable<Persona>{
+    return this.http.get<Persona>(this.url+"/1");
    }
   editarDatosPersona(persona:Persona):Observable<any>{
-    return this.http.post('http://localhost:3000/posts',persona); 
+    return this.http.post(this.url,persona); 
   }
 }

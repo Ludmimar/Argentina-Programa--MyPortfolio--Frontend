@@ -1,15 +1,15 @@
 export class Persona{ //propiedades de la
-    private id:number;
-    private name:string;
-    private lastname:string;
-    private position:string;
-    private ubication:string;
-    private image:string;
-    private dateOfBirth:string;
-    private mail:string;
-    private aboutMe:string;
-    private aboutMeImg:string;
-    private backImage:string;
+    id:number;
+    name:string;
+    lastname:string;
+    position:string;
+    ubication:string;
+    image:string;
+    dateOfBirth:string;
+    mail:string;
+    aboutMe:string;
+    aboutMeImg:string;
+    backImage:string;
 
    constructor(id:number, name:string, lastname:string, position:string, ubication:string, image:string, dateOfBirth:string,  mail:string, aboutMe:string, aboutMeImg:string, backImage:string)
    {

@@ -9,7 +9,7 @@ import { PersonaService } from 'src/app/servicios/persona.service';
   styleUrls: ['./encabezado.component.css']
 })
 export class EncabezadoComponent implements OnInit {
-  persona:any;
+  persona!:Persona;
   usuarioAutenticado:boolean=true; 
   form!:FormGroup; 
   constructor(private miServicio:PersonaService, private formBuilder:FormBuilder) { 
@@ -30,7 +30,7 @@ export class EncabezadoComponent implements OnInit {
   ngOnInit(): void {
     this.miServicio.obtenerDatosPersona().subscribe(data => {
     console.log(data);
-    this.persona=data["Persona"]; 
+    this.persona=data; 
     });
   }
 
@@ -38,7 +38,7 @@ export class EncabezadoComponent implements OnInit {
   {
     if (this.form.valid) 
     {
-      let personaEditar= new Persona(this.form.controls['id'].value,this.form.controls['name'].value,
+      let personaEditar= new Persona(this.persona.id, this.form.controls['name'].value,
       this.form.controls['lastname'].value,this.form.controls['position'].value, 
       this.form.controls['ubication'].value, this.form.controls['image'].value, this.form.controls['dateOfBirth'].value,
       this.form.controls['mail'].value, this.form.controls['aboutMe'].value, this.form.controls['aboutMeImg'].value, 
