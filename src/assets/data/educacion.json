@@ -15,8 +15,11 @@
 		{
 			"school": "Argentina Programa",
 			"title": "Programador Web FullStack",
-			"img": "./assets/imagenes/proyect.jpg",
-			"career": "Desarrollo de Software"
+			"img": "https://github.com/Ludmimar/MyPortfolio/blob/master/src/assets/imagenes/ArgProg.jpg?raw=true",
+			"career": "Desarrollo de Software",
+			"start": "2015",
+			"end": "2020",
+			"idPersona": "1"
 		},
 		{
 			"school": "Argentina Programa",

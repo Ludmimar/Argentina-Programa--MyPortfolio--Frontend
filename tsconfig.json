@@ -21,7 +21,8 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "strictPropertyInitialization":false //no me pide el constructor en la clase
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
