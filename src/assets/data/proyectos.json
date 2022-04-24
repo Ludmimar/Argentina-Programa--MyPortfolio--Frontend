@@ -1,10 +1,12 @@
 {
 	"proyect": [
 		{
-			"referency": "Pagina web",
+			"title": "Pagina web",
+			"details":"Programador",
 			"img": "./assets/imagenes/proyect.jpg",
 			"lenguage": "html, Css, Java, Angular, Sql",
-			"url": "https://github.com/Ludmimar"
+			"url": "https://github.com/Ludmimar",
+			"idPersona" : "1"
 		},
 		{
 			"referency": "Aplicacion android",

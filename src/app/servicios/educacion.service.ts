@@ -21,7 +21,7 @@ export class EducacionService {
   }
 
    //lo agregue
-   crearEducacion(educacion:any) : Observable<any[]>
+  crearEducacion(educacion:any) : Observable<any[]>
    {
      return this.http.post<any[]>(this.url, educacion);
    }

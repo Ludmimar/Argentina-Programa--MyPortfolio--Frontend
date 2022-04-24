@@ -35,7 +35,7 @@ public get _img() {
     return this.img
 }
 
-public get _startn() {
+public get _start() {
     return this.start
 }
 
