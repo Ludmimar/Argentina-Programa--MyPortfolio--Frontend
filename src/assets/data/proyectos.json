@@ -3,16 +3,18 @@
 		{
 			"title": "Pagina web",
 			"details":"Programador",
-			"img": "./assets/imagenes/proyect.jpg",
+			"img": "https://github.com/Ludmimar/MyPortfolio/blob/master/src/assets/imagenes/proyect.jpg?raw=true",
 			"lenguage": "html, Css, Java, Angular, Sql",
 			"url": "https://github.com/Ludmimar",
 			"idPersona" : "1"
 		},
 		{
 			"referency": "Aplicacion android",
-			"img": "./assets/imagenes/proyect.jpg",
+			"details":"Programador",
+			"img": "https://github.com/Ludmimar/MyPortfolio/blob/master/src/assets/imagenes/proyect.jpg?raw=true",
 			"lenguage": "html, Css, Java, Angular, Sql",
-			"url": "https://github.com/Ludmimar"
+			"url": "https://github.com/Ludmimar",
+			"idPersona" : "1"
 		},	
 		{
 			"referency": "Aplicacion android",

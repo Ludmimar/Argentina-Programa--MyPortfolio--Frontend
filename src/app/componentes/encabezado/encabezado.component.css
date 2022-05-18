@@ -76,7 +76,7 @@
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   align-items: center; 
-  align-content: center;
+  align-content: right;
 }
   
 .acerca-de img{

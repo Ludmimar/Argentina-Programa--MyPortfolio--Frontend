@@ -1,11 +1,11 @@
 .img-logo{
   display:flex;
   position: absolute;
-  height: 4vw;
+  height: 4.5vw;
 }
 
 .navbar { 
-  height: 4vw;
+  height: 4.5vw;
   display: flex;    
   justify-content: flex-end;
 }

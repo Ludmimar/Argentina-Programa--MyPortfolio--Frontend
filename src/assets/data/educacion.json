@@ -3,8 +3,11 @@
 		{
 			"school": "UTN",
 			"title": "Tecnicatura en programacion",
-			"img": "./assets/imagenes/utn.png",
-			"career": "Analista de sistemas"
+			"img": "https://github.com/Ludmimar/MyPortfolio/blob/master/src/assets/imagenes/utn.png?raw=true",
+			"career": "Analista de sistemas",
+			"start": "2015",
+			"end": "2020",
+			"idPersona": "1"
 		},
 		{
 			"school": "Argentina Programa",

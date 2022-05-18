@@ -25,5 +25,15 @@ export class EducacionService {
    {
      return this.http.post<any[]>(this.url, educacion);
    }
-  
+
+   //boton guardar
+   modificarEducacion(educacion:any): Observable<any[]>
+   {
+    return this.http.put<any[]>(this.url+"/editar", educacion); 
+  }
+
+  obtenerUnaEducacion(id:number):Observable<any>
+  {
+    return this.http.get(this.url+"/Buscar/"+id)
+  }
 }

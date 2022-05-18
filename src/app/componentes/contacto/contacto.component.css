@@ -3,7 +3,7 @@
 }
 
 .contact-heading {
-    width: 100vw;  
+    width: 100vw;
     display: flex; 
     flex-direction: column;
     justify-content: center;
@@ -27,8 +27,8 @@
 } 
   
 .container-contacto img {
-    width: 35vw;
-    height: 35vw;
+    width: 30vw;
+    height: 20vw;
     border-radius: 50px;
 }
 

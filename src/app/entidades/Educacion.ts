@@ -47,6 +47,28 @@ public get _career() {
     return this.career
 }
 
+public setSchool(school: string) {
+    this.school = school;
+}
+public setTitle(title: string) {
+    this.title = title;
+}
+public setImg(img: string) {
+    this.img = img;
+}
+public setStart(start: number) {
+    this.start = start;
+}
+
+public setEndt(end: number) {
+    this.end = end;
+}
+public setCareer(career: string) {
+    this.career = career;
+}
+public setIdPersona(idPersona: number) {
+    this.idPersona = idPersona;
+}
 
 
 }

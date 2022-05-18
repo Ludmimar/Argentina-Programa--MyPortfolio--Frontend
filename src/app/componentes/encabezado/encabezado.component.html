@@ -1,45 +1,50 @@
 <header>    
-        <div class="card-container">           
-            <div class="social-network-header">
-              <a href="#"> <!--link para llevarlo a las redes sociales-->
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-linkedin-in  "></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </div>
-            <div class="img-fondo"> 
-              <img [src]="persona.backImage" class="img-fluid" alt="Portada">
-            </div>
-            <div class="photo">
-              <img [src]="persona.image" class="circular--square"  alt="Foto de perfil de Ludmila Martos">
-            </div>
-           
-            <div class="personal-data-container">
-              <h1 class="titulo">{{persona.lastname}} {{persona.name}}</h1>                             
-              <div class="divider"></div>
-              <p id="position">{{persona.position}}</p> 
-              <p id="ubication">{{persona.ubication}}</p>
-              <p id="dateOfBirth">Fecha de nacimiento: {{persona.dateOfBirth}}</p>
-              <p id="mail">{{persona.mail}}</p>
-              <button *ngIf="usuarioAutenticado" class="btn" data-bs-toggle="modal" 
-              data-bs-target="#modalEncabezado" (click)="mostrarDatosEncabezado()">Editar</button>                
-            </div>    
-        </div>     
-    </header> 
-
-    
-    <div  class="acerca-de">
-      <img [src]="persona.aboutMeImg" alt="ludmila martos retrato">  
-      <div class="acerca-de-info">
-        <h2>Acerca de</h2>
-        <div class="divider"></div>
-        <p>{{persona.aboutMe}}</p>          
-      </div>
+  <div class="card-container">   
+      <div class="social-network-header">
+        <a href="https://www.linkedin.com/in/ludmila-martos-784aa6236/" target="_blank">
+          <i class="fab fa-linkedin-in  "></i>
+        </a>
+        <a href="https://wa.me/qr/SVUZ72WQWXTIB1" target="_blank"> 
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://t.me/LudmilaMartos" target="_blank">
+          <i class="fab fa-telegram"></i>
+        </a>        
+        <a href="/contacto">
+          <i class="fab fa-google"></i>
+        </a>          
+      </div>         
+  
+      <router-outlet></router-outlet>
+            
+    <div class="img-fondo"> 
+      <img [src]="persona.backImage" class="img-fluid" alt="Portada">
     </div>
+    <div class="photo">
+      <img [src]="persona.image" class="circular--square"  alt="Foto de perfil de Ludmila Martos">
+    </div>
+           
+    <div class="personal-data-container">
+      <h1 class="titulo">{{persona.lastname}} {{persona.name}}</h1>                             
+      <div class="divider"></div>
+      <p id="position">{{persona.position}}</p> 
+      <p id="ubication">{{persona.ubication}}</p>      
+      <p id="dateOfBirth">Fecha de nacimiento: {{persona.dateOfBirth}}</p> 
+      <p id=""></p>            
+      <button *ngIf="usuarioAutenticado" class="btn" data-bs-toggle="modal" 
+        data-bs-target="#modalEncabezado" (click)="mostrarDatosEncabezado()">Editar</button>
+    </div>    
+  </div>     
+</header> 
+    
+<div  class="acerca-de">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/zlURb3uKQ1c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div class="acerca-de-info">
+    <h2>Acerca de</h2>
+    <div class="divider"></div>
+    <p>{{persona.aboutMe}}</p>          
+  </div>
+</div>
 
  <!-- Modal -->
   <div class="modal fade" id="modalEncabezado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -68,14 +73,17 @@
                         </div>
                       </div>
                     </div>
+                    
                     <div class="mb-3">
                       <label for="position" class="form-label">Posición</label>
                       <input type="text" class="form-control" id="position" formControlName="position">
                     </div>
+
                     <div class="mb-3">
                       <label for="ubication" class="form-label">Lugar de Residencia</label>
                       <input type="text" class="form-control" id="ubication" formControlName="ubication">
                     </div>
+
                     <div class="mb-3">
                       <label for="image" class="form-label">URL de la imagen de Perfil</label> 
                       <input type="text" class="form-control" id="image" formControlName="image">
@@ -84,11 +92,12 @@
                         <div *ngIf="image?.errors?.['required']" class="text-danger">
                           La url es obligatoria.
                         </div>
-                      <div *ngIf="image?.errors?.['pattern']" class="text-danger">
-                        El  formato de la url no es válida.
+                        <div *ngIf="image?.errors?.['pattern']" class="text-danger">
+                          El  formato de la url no es válida.
+                        </div>
                       </div>
-                    </div>
-                    </div>
+                  </div>
+
                     <div class="mb-3">
                       <label for="image" class="form-label">URL de la imagen de Portada</label> 
                       <input type="text" class="form-control" id="backImage" formControlName="backImage">
@@ -96,12 +105,14 @@
                       <div *ngIf="backImage?.invalid && (backImage?.dirty || backImage?.touched)">
                         <div *ngIf="backImage?.errors?.['required']" class="text-danger">
                           La url es obligatoria.
+                        </div>                      
+                        <div *ngIf="backImage?.errors?.['pattern']" class="text-danger">
+                          El  formato de la url no es válida.
                         </div>
-                      <div *ngIf="backImage?.errors?.['pattern']" class="text-danger">
-                        El  formato de la url no es válida.
                       </div>
                     </div>
-                    </div>
+                    
+                    
                     <div class="mb-3">
                       <label for="mail" class="form-label">Email</label>
                       <input type="text" class="form-control" id="mail" formControlName="mail">
@@ -118,10 +129,10 @@
                         <div *ngIf="aboutMeImg?.errors?.['required']" class="text-danger">
                           La url es obligatoria.
                         </div>
-                      <div *ngIf="aboutMeImg?.errors?.['pattern']" class="text-danger">
-                        El  formato de la url no es válida.
+                        <div *ngIf="aboutMeImg?.errors?.['pattern']" class="text-danger">
+                          El  formato de la url no es válida.
+                        </div>
                       </div>
-                    </div>
                     </div>
                 </form>
             </div>
@@ -131,7 +142,7 @@
           <button type="button" class="btn btn-primary" (click)="guardarEncabezado()">Guardar</button>
         </div>
       </div>
-    </div>
-  </div> 
+  </div>
+</div> 
 
 
