@@ -57,7 +57,7 @@ export class EncabezadoComponent implements OnInit {
       this.form.markAllAsTouched();
       alert("Hay campos no válidos");
     }
-  }
+  }  
   mostrarDatosEncabezado(){
     this.form.get("name")?.setValue(this.persona.name);
     this.form.get("lastname")?.setValue(this.persona.lastname);
