@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validator, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Educacion } from 'src/app/entidades/Educacion';
 import { EducacionService } from 'src/app/servicios/educacion.service';
 
@@ -17,7 +18,8 @@ export class EducacionComponent implements OnInit {
   formEditar:FormGroup;
   constructor(
     private miServicio:EducacionService, 
-    private formBuilder:FormBuilder
+    private formBuilder:FormBuilder,
+    private router:Router
     ) {
     this.form=this.formBuilder.group({      
       school:['',[Validators.required]],
@@ -72,12 +74,10 @@ export class EducacionComponent implements OnInit {
         career: this.form.get("career")?.value,
         idPersona: this.form.get("idPersona")?.value   
       }    
-      this.miServicio.crearEducacion(edu).subscribe(data =>{
-        alert("Se agrego con exito!");         
-      });     
-      this.form.reset();    
+      this.miServicio.crearEducacion(edu).subscribe();     
+      this.form.reset();          
       document.getElementById("cerrarModalEducacion")?.click();
-      
+      window.history.back();
   }
   else
   { 
