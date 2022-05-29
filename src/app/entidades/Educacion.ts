@@ -4,11 +4,11 @@ export class Educacion {
     title:string;
     img:string;
     start:number;
-    end:number;
+    end:string;
     career:string;
     idPersona:number;
 
-    constructor(id:number,school:string, title:string, img:string, start:number, end:number, career:string, idPersona:number)
+    constructor(id:number,school:string, title:string, img:string, start:number, end:string, career:string, idPersona:number)
    {
        this.id=id;
        this.school=school;
@@ -60,7 +60,7 @@ public setStart(start: number) {
     this.start = start;
 }
 
-public setEndt(end: number) {
+public setEndt(end: string) {
     this.end = end;
 }
 public setCareer(career: string) {
