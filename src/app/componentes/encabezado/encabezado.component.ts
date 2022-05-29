@@ -29,6 +29,7 @@ export class EncabezadoComponent implements OnInit {
       mail:['',[Validators.required]],
       aboutMe:['',[Validators.required]],
       aboutMeImg:['',[Validators.required,Validators.pattern('https?://.+')]],
+      password:['',[Validators.required]],
     })
 
     this.formLoguin=this.formBuilder.group({   
@@ -59,7 +60,7 @@ export class EncabezadoComponent implements OnInit {
       this.form.controls['lastname'].value,this.form.controls['position'].value, 
       this.form.controls['ubication'].value, this.form.controls['image'].value, this.form.controls['dateOfBirth'].value,
       this.form.controls['mail'].value, this.form.controls['aboutMe'].value, this.form.controls['aboutMeImg'].value, 
-      this.form.controls['backImage'].value, this.persona.password, this.persona.logoArgProg);
+      this.form.controls['backImage'].value, this.form.controls['password'].value, this.persona.logoArgProg);
       this.miServicio.editarDatosPersona(personaEditar).subscribe(data => {
         this.persona=personaEditar;
         this.form.reset();
@@ -86,6 +87,7 @@ export class EncabezadoComponent implements OnInit {
     this.form.get("aboutMe")?.setValue(this.persona.aboutMe);
     this.form.get("aboutMeImg")?.setValue(this.persona.aboutMeImg);
     this.form.get("backImage")?.setValue(this.persona.backImage);
+    this.form.get("password")?.setValue(this.persona.password);
   }
 
 
@@ -100,16 +102,19 @@ export class EncabezadoComponent implements OnInit {
           let loguin:string = "ok";
           localStorage.setItem("loguin", loguin)
         }
+        else
+        {
+          alert("Datos no validos");
+        }          
       }
+      else
+      {
+        alert("Datos no validos");
+      }    
       this.formLoguin.reset();          
       document.getElementById("cerrarModalLoguin")?.click();
-      window.location.reload();
-    }
-    else
-    { 
-      this.formLoguin.markAllAsTouched();
-      alert("Hay campos no válidos");
-    }
+      window.location.reload();  
+    }    
   }
 
   cerrarSesion()

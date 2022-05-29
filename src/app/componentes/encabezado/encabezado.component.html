@@ -1,11 +1,11 @@
 <header>      
   <div class="card-container"> 
     <div class="botones">
-      <button type="button" *ngIf="userlogued" class="button" data-bs-toggle="modal" data-bs-target="#modalIniciarSesion">
+      <button type="button" *ngIf="userlogued" class="button" data-bs-toggle="modal" data-bs-target="#modalIniciarSesion">      
         Loguin
       </button>    
-      <button type="button" *ngIf="usuarioAutenticado" class="button" (click)="cerrarSesion()">
-        LogOut
+      <button type="button" *ngIf="usuarioAutenticado" class="button" (click)="cerrarSesion()">     
+        LogOut        
       </button>
      </div>  
       <div class="social-network-header">
@@ -23,9 +23,6 @@
           <i class="fab fa-google"></i>
         </a>                      
       </div>         
-      
-  
-      
             
     <div class="img-fondo"> 
       <img [src]="persona.backImage" class="img-fluid" alt="Portada">
@@ -33,15 +30,13 @@
     <div class="photo">
       <img [src]="persona.image" class="circular--square"  alt="Foto de perfil de Ludmila Martos">
     </div>
-
-   
-     
-           
+       
     <div class="personal-data-container">
       <h1 class="titulo">{{persona.lastname}} {{persona.name}}</h1>                             
       <div class="divider"></div>
       <p id="position">{{persona.position}}</p> 
-      <p id="ubication">{{persona.ubication}}</p>                     
+      <p id="ubication">{{persona.ubication}}</p>
+      <p id="mail">{{persona.mail}}</p>                     
       
       <button *ngIf="usuarioAutenticado" class="btn" data-bs-toggle="modal" 
         data-bs-target="#modalEncabezado" (click)="mostrarDatosEncabezado()">Editar</button>
@@ -145,7 +140,7 @@
                     </div>
 
                     <label for="password" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="password" formControlName="password"> 
+                      <input type="text" class="form-control" id="password" formControlName="password"> 
                       <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
                         <div *ngIf="password?.errors?.['required']" class="text-danger">
                           La contraseña es  Obligatorio.
