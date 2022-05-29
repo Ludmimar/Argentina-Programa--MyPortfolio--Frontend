@@ -7,7 +7,7 @@ import {Experiencia } from '../entidades/Experiencia';
   providedIn: 'root'
 })
 export class ProyectoService {
-  url:string="http://localhost:8080/experiencia"; //llamo al backend
+  url:string="https://ludmila-martos.herokuapp.com/experiencia"; //llamo al backend
 
   constructor(private http:HttpClient) { }
 
