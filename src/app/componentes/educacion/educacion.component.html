@@ -4,7 +4,7 @@
         <div class="divider"></div>
       </div>      
       
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" 
+<button type="button" *ngIf="usuarioAutenticado" class="btn btn-primary" data-bs-toggle="modal" 
 data-bs-target="#modalEducacionAgregar">
   Agregar
 </button>
@@ -57,22 +57,20 @@ data-bs-target="#modalEducacionAgregar">
     <div class="card-educacion">
       <img [src]="item.img"  alt="">            
       <div class="card__title-educacion">
+        <h2><strong>Institucion: </strong></h2>
         <h2>{{item.school}}</h2>              
-        <p>{{item.title}}</p>
-        <p>{{item.career}}</p>
-        <p>Inicio: {{item.start}} Fin: {{item.end}}</p>       
+        <p><strong>Titulo:</strong> {{item.title}}</p>
+        <p><strong>Carrera:</strong> {{item.career}}</p>
+        <p><strong>Inicio:</strong> {{item.start}} <strong>Fin:</strong> {{item.end}}</p>       
       </div>
       <div class="botones-educ">   
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" 
+        <button *ngIf="usuarioAutenticado" type="button" class="btn btn-primary" data-bs-toggle="modal" 
         data-bs-target="#modalUpdateEducacion" (click)="mostrarEducacion(item)">
          Editar        
         </button>     
-        <button class="btn" (click)="eliminarEducacion(item)">Eliminar</button>        
+        <button class="btn" *ngIf="usuarioAutenticado" (click)="eliminarEducacion(item)">Eliminar</button>        
       </div> 
     </div> 
-    
-    
-
     
   </div>
 </div>
@@ -86,12 +84,12 @@ data-bs-target="#modalEducacionAgregar">
         <h5 class="modal-title" id="exampleModalLabel">Editar Educacion</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">    
+      <div class="modal-body"> 
+        
                 <form [formGroup]="formEditar">
                     <div class="mb-3"> 
                       <label for="school" class="form-label">Institucion Educativa</label>
-                      <input  type="text" 
-                      class="form-control" id="school" formControlName="school"> 
+                      <input  type="text" class="form-control" id="school" formControlName="school"> 
                       <div *ngIf="school?.invalid && (school?.dirty || school?.touched)">
                         <div *ngIf="school?.errors?.['required']" class="text-danger">
                            La Institucion Educativa es obligatoria
@@ -113,39 +111,39 @@ data-bs-target="#modalEducacionAgregar">
                           El Titulo es  Obligatorio.
                         </div>
                       </div>
-
                     </div>                  
                     
                     <div class="mb-3">
                       <label for="img" class="form-label">URL de la imagen de Educacion</label> 
-                      <input type="text" class="form-control" id="img" formControlName="img">
-                     
+                      <input type="text" class="form-control" id="img" formControlName="img">                     
                       <div *ngIf="img?.invalid && (img?.dirty || img?.touched)">
                         <div *ngIf="img?.errors?.['required']" class="text-danger">
                           La url es obligatoria.
                         </div>
-                      <div *ngIf="img?.errors?.['pattern']" class="text-danger">
-                        El  formato de la url no es válida.
+                        <div *ngIf="img?.errors?.['pattern']" class="text-danger">
+                          El  formato de la url no es válida.
+                        </div>
                       </div>
-                    </div>
-                    </div>                   
+                    </div>   
+
                     <div class="mb-3">
                       <label for="start" class="form-label">Fecha de inicio</label>
                       <input type="text" class="form-control" id="start" formControlName="start">
                     </div>
+
                     <div class="mb-3">
                       <label for="end" class="form-label">Fecha de Fin</label>
                       <input type="text" class="form-control" id="end" formControlName="end">
                     </div>                                      
                 </form>           
-        </div>
-        <div class="modal-footer">
-          <button type="button" id="cerrarModalEducacion" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary" (click)="modificarEducacion()">Guardar</button>
-        </div>
-      </div>      
-    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cerrarModalEducacion" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" (click)="modificarEducacion()">Guardar</button>
+      </div>
+    </div>      
   </div>
+</div>
 
 
 
@@ -185,43 +183,44 @@ data-bs-target="#modalEducacionAgregar">
                           El Titulo es  Obligatorio.
                         </div>
                       </div>
-
                     </div>                  
                     
                     <div class="mb-3">
                       <label for="img" class="form-label">URL de la imagen de Educacion</label> 
-                      <input type="text" class="form-control" id="img" formControlName="img">
-                     
+                      <input type="text" class="form-control" id="img" formControlName="img">                     
                       <div *ngIf="img?.invalid && (img?.dirty || img?.touched)">
                         <div *ngIf="img?.errors?.['required']" class="text-danger">
                           La url es obligatoria.
                         </div>
-                      <div *ngIf="img?.errors?.['pattern']" class="text-danger">
-                        El  formato de la url no es válida.
+                        <div *ngIf="img?.errors?.['pattern']" class="text-danger">
+                          El  formato de la url no es válida.
+                        </div>
                       </div>
                     </div>
-                    </div>                   
+
                     <div class="mb-3">
                       <label for="start" class="form-label">Fecha de inicio</label>
                       <input type="text" class="form-control" id="start" formControlName="start">
                     </div>
+
                     <div class="mb-3">
                       <label for="end" class="form-label">Fecha de cierre</label>
                       <input type="text" class="form-control" id="end" formControlName="end">
                     </div>
+
                     <div class="mb-3">
                       <label for="idPersona" class="form-label">Id Persona</label>
                       <input type="text" class="form-control" id="idPersona" formControlName="idPersona">
                     </div>                    
                 </form>           
-        </div>
-        <div class="modal-footer">
-          <button type="button" id="cerrarModalEducacion" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary" (click)="guardarEducacion()">Guardar</button>
-        </div> 
-      </div>      
-    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cerrarModalEducacion" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" (click)="guardarEducacion()">Guardar</button>
+      </div> 
+    </div>      
   </div>
+</div>
 
 
  

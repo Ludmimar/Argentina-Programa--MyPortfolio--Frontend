@@ -1,6 +1,15 @@
-<header>    
-  <div class="card-container">   
+<header>      
+  <div class="card-container"> 
+    <div class="botones">
+      <button type="button" *ngIf="userlogued" class="button" data-bs-toggle="modal" data-bs-target="#modalIniciarSesion">
+        Loguin
+      </button>    
+      <button type="button" *ngIf="usuarioAutenticado" class="button" (click)="cerrarSesion()">
+        LogOut
+      </button>
+     </div>  
       <div class="social-network-header">
+       
         <a href="https://www.linkedin.com/in/ludmila-martos-784aa6236/" target="_blank">
           <i class="fab fa-linkedin-in  "></i>
         </a>
@@ -10,12 +19,13 @@
         <a href="https://t.me/LudmilaMartos" target="_blank">
           <i class="fab fa-telegram"></i>
         </a>        
-        <a href="/contacto">
+        <a href="mailto:elcorreoquequieres@gmail.com">
           <i class="fab fa-google"></i>
-        </a>          
+        </a>                      
       </div>         
+      
   
-      <router-outlet></router-outlet>
+      
             
     <div class="img-fondo"> 
       <img [src]="persona.backImage" class="img-fluid" alt="Portada">
@@ -23,14 +33,16 @@
     <div class="photo">
       <img [src]="persona.image" class="circular--square"  alt="Foto de perfil de Ludmila Martos">
     </div>
+
+   
+     
            
     <div class="personal-data-container">
       <h1 class="titulo">{{persona.lastname}} {{persona.name}}</h1>                             
       <div class="divider"></div>
       <p id="position">{{persona.position}}</p> 
-      <p id="ubication">{{persona.ubication}}</p>      
-      <p id="dateOfBirth">Fecha de nacimiento: {{persona.dateOfBirth}}</p> 
-      <p id=""></p>            
+      <p id="ubication">{{persona.ubication}}</p>                     
+      
       <button *ngIf="usuarioAutenticado" class="btn" data-bs-toggle="modal" 
         data-bs-target="#modalEncabezado" (click)="mostrarDatosEncabezado()">Editar</button>
     </div>    
@@ -77,11 +89,21 @@
                     <div class="mb-3">
                       <label for="position" class="form-label">Posición</label>
                       <input type="text" class="form-control" id="position" formControlName="position">
+                      <div *ngIf="position?.invalid && (position?.dirty || position?.touched)">
+                        <div *ngIf="position?.errors?.['required']" class="text-danger">
+                          La posicion es  Obligatorio.
+                        </div>
+                      </div>                    
                     </div>
 
                     <div class="mb-3">
                       <label for="ubication" class="form-label">Lugar de Residencia</label>
                       <input type="text" class="form-control" id="ubication" formControlName="ubication">
+                      <div *ngIf="ubication?.invalid && (ubication?.dirty || ubication?.touched)">
+                        <div *ngIf="ubication?.errors?.['required']" class="text-danger">
+                          La ubicacion es  Obligatorio.
+                        </div>
+                      </div>
                     </div>
 
                     <div class="mb-3">
@@ -96,7 +118,7 @@
                           El  formato de la url no es válida.
                         </div>
                       </div>
-                  </div>
+                    </div>
 
                     <div class="mb-3">
                       <label for="image" class="form-label">URL de la imagen de Portada</label> 
@@ -110,17 +132,36 @@
                           El  formato de la url no es válida.
                         </div>
                       </div>
-                    </div>
-                    
+                    </div>                    
                     
                     <div class="mb-3">
                       <label for="mail" class="form-label">Email</label>
                       <input type="text" class="form-control" id="mail" formControlName="mail">
+                      <div *ngIf="mail?.invalid && (mail?.dirty || mail?.touched)">
+                        <div *ngIf="mail?.errors?.['required']" class="text-danger">
+                          El mail es  Obligatorio.
+                        </div>
+                      </div>
                     </div>
+
+                    <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password" formControlName="password"> 
+                      <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                        <div *ngIf="password?.errors?.['required']" class="text-danger">
+                          La contraseña es  Obligatorio.
+                        </div>
+                      </div>
+
                     <div class="mb-3">
                       <label for="aboutMe" class="form-label">Acerca de</label>
-                      <textarea class="form-control" id="aboutMe" rows="3" formControlName="aboutMe"></textarea>                      
+                      <textarea class="form-control" id="aboutMe" rows="3" formControlName="aboutMe"></textarea>   
+                      <div *ngIf="aboutMe?.invalid && (aboutMe?.dirty || aboutMe?.touched)">
+                        <div *ngIf="aboutMe?.errors?.['required']" class="text-danger">
+                          Acerca de es  Obligatorio.
+                        </div>
+                      </div>                   
                     </div>
+
                     <div class="mb-3">
                       <label for="aboutMeImg" class="form-label">URL de la imagen Sobre mi</label> 
                       <input type="text" class="form-control" id="aboutMeImg" formControlName="aboutMeImg">
@@ -145,4 +186,43 @@
   </div>
 </div> 
 
+<!-- Modal loguin -->
+<div class="modal fade" id="modalIniciarSesion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
 
+        <form [formGroup]="formLoguin">
+          <div class="mb-3"> 
+            <label for="mail" class="form-label">Email</label>
+            <input type="text" class="form-control" id="mail" formControlName="mail"> 
+            <div *ngIf="mail?.invalid && (mail?.dirty || mail?.touched)">
+              <div *ngIf="mail?.errors?.['required']" class="text-danger">
+                  El mail es  Obligatorio.
+              </div>
+            </div>
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password"> 
+            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+              <div *ngIf="password?.errors?.['required']" class="text-danger">
+                La contraseña es  Obligatorio.
+              </div>
+            </div>
+          </div>
+                    
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cerrarModalLoguin" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" (click)="loguin()">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

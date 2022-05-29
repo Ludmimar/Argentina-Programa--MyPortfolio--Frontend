@@ -26,4 +26,15 @@ export class ProyectoService {
      return this.http.post<any[]>(this.url, experiencia);
    }
 
+    //boton guardar
+    modificarExperiencia(experiencia:any): Observable<any[]>
+    {
+     return this.http.put<any[]>(this.url+"/editar", experiencia); 
+   }
+ 
+   obtenerUnaExperiencian(id:number):Observable<any>
+   {
+     return this.http.get(this.url+"/Buscar/"+id)
+   }
+
 }

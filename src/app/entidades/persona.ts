@@ -10,8 +10,10 @@ export class Persona{ //propiedades de la
     aboutMe:string;
     aboutMeImg:string;
     backImage:string;
+    logoArgProg:string;
+    password:string;
 
-   constructor(id:number, name:string, lastname:string, position:string, ubication:string, image:string, dateOfBirth:string,  mail:string, aboutMe:string, aboutMeImg:string, backImage:string)
+   constructor(id:number, name:string, lastname:string, position:string, ubication:string, image:string, dateOfBirth:string,  mail:string, aboutMe:string, aboutMeImg:string, backImage:string, password:string, logoArgProg:string)
    {
        this.id=id;
        this.name=name;
@@ -23,7 +25,9 @@ export class Persona{ //propiedades de la
        this.mail=mail;
        this.aboutMe=aboutMe;
        this.aboutMeImg=aboutMeImg;
-       this.backImage=backImage
+       this.backImage=backImage;
+       this.password= password;
+       this.logoArgProg = logoArgProg
    }
 public get _id() {
     return this.id
@@ -67,6 +71,14 @@ public get _aboutMeImg() {
 
 public get _backImage() {
     return this.backImage
+}
+
+public get _password() {
+    return this.password
+}
+
+public get _logoArgProg() {
+    return this.logoArgProg
 }
 
 

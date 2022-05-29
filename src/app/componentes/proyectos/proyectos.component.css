@@ -1,7 +1,7 @@
 .proyecto {
     background-color: rgb(255, 255, 255);   
     width: 100vw;
-    height: 70vw;
+    height: 80vw;
     overflow: hidden; 
     position: relative;
 }
@@ -26,14 +26,14 @@
 }
   
 .card-proyecto {
-    width: 20vw; 
-    height: 20vw;
+    width: 22vw; 
+    height: 22vw;
     background-color: #dba6fa;
     margin: 1vw;
 }
   
 .card-proyecto img {
-    width:20vw; 
+    width:22vw; 
     height: 10vw;
 }
   
@@ -50,7 +50,8 @@
 }
   
 .card__title-proyecto p {
-    font-size: 1vw;
+    font-size: 1.2vw;
+    padding: -0.5vw;
 }
   
 .botones {
@@ -63,7 +64,7 @@
     display: flex; 
     align-items: center;  
     justify-content: space-evenly;
-    margin-top: -0.5vw;
+    margin-top: 1vw;
 }
 
 .social a {

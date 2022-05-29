@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
 import { EducacionComponent } from './componentes/educacion/educacion.component';
-import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -16,8 +15,7 @@ import { RouterModule, Routes } from '@angular/router';
 const appRoutes: Routes = [
   {path: '', component: EncabezadoComponent},
   {path: 'educacion', component: EducacionComponent},
-  {path: 'proyectos', component: ProyectosComponent},
-  {path: 'contacto', component: ContactoComponent}
+  {path: 'proyectos', component: ProyectosComponent}
 ];
 
 @NgModule({
@@ -25,7 +23,6 @@ const appRoutes: Routes = [
     AppComponent,
     EncabezadoComponent,
     EducacionComponent,
-    ContactoComponent,
     FooterComponent,
     ProyectosComponent
   ],

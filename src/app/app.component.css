@@ -10,7 +10,7 @@
   justify-content: flex-end;
 }
 
-.menu { 
+.menu{ 
   font-size: 1.5vw;
   display: flex;  
   align-content: center; 
@@ -30,7 +30,8 @@
   background-color: rgb(253, 215, 241);
 }
 
-.menu a:hover {
+.menu a:hover, 
+button:hover {
   background-color: rgb(243, 106, 106); 
   color: black; 
   transition: ease-in .4s; 

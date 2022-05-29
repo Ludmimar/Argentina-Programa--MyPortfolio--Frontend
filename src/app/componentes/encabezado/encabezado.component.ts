@@ -10,8 +10,13 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 })
 export class EncabezadoComponent implements OnInit {
   persona!:Persona;
-  usuarioAutenticado:boolean=true; 
+  usuarioAutenticado:boolean=false; 
+  userlogued:boolean=true;
   form!:FormGroup; 
+  loguinForm:FormGroup;
+  formLoguin:FormGroup;
+  
+
   constructor(private miServicio:PersonaService, private formBuilder:FormBuilder) { 
     this.form=this.formBuilder.group({       
       name:['',[Validators.required]],
@@ -23,7 +28,12 @@ export class EncabezadoComponent implements OnInit {
       dateOfBirth:['',[Validators.required]],
       mail:['',[Validators.required]],
       aboutMe:['',[Validators.required]],
-      aboutMeImg:['',[Validators.required,Validators.pattern('https?://.+')]]
+      aboutMeImg:['',[Validators.required,Validators.pattern('https?://.+')]],
+    })
+
+    this.formLoguin=this.formBuilder.group({   
+      mail:['',[Validators.required]],
+      password:['',[Validators.required]],
     })
   }
 
@@ -32,6 +42,13 @@ export class EncabezadoComponent implements OnInit {
     console.log(data);
     this.persona=data; 
     });
+    let loguin = localStorage.getItem("loguin");
+      if (loguin == "ok")
+      {
+        this.usuarioAutenticado=true;
+        this.userlogued=false;
+        
+      }
   }
 
   guardarEncabezado()
@@ -42,7 +59,7 @@ export class EncabezadoComponent implements OnInit {
       this.form.controls['lastname'].value,this.form.controls['position'].value, 
       this.form.controls['ubication'].value, this.form.controls['image'].value, this.form.controls['dateOfBirth'].value,
       this.form.controls['mail'].value, this.form.controls['aboutMe'].value, this.form.controls['aboutMeImg'].value, 
-      this.form.controls['backImage'].value);
+      this.form.controls['backImage'].value, this.persona.password, this.persona.logoArgProg);
       this.miServicio.editarDatosPersona(personaEditar).subscribe(data => {
         this.persona=personaEditar;
         this.form.reset();
@@ -70,6 +87,38 @@ export class EncabezadoComponent implements OnInit {
     this.form.get("aboutMeImg")?.setValue(this.persona.aboutMeImg);
     this.form.get("backImage")?.setValue(this.persona.backImage);
   }
+
+
+  loguin()
+  {
+    if (this.formLoguin.valid) 
+    {
+      if (this.formLoguin.controls['mail'].value == this.persona.mail)
+      {
+        if(this.formLoguin.controls['password'].value == this.persona.password )
+        {          
+          let loguin:string = "ok";
+          localStorage.setItem("loguin", loguin)
+        }
+      }
+      this.formLoguin.reset();          
+      document.getElementById("cerrarModalLoguin")?.click();
+      window.location.reload();
+    }
+    else
+    { 
+      this.formLoguin.markAllAsTouched();
+      alert("Hay campos no válidos");
+    }
+  }
+
+  cerrarSesion()
+  {
+    localStorage.clear();
+    window.location.reload();
+  }
+  
+  
 
   get name(){    
     return this.form.get("name");
@@ -100,5 +149,8 @@ export class EncabezadoComponent implements OnInit {
   }
   get backImage(){
     return this.form.get("backImage");
+  }
+  get password(){
+    return this.form.get("password");
   }
 }

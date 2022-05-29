@@ -4,7 +4,7 @@
         <div class="divider"></div>
       </div>
 
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalExperienciaAgregar">
+      <button type="button" *ngIf="usuarioAutenticado" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalExperienciaAgregar">
         Agregar
       </button>
       
@@ -13,8 +13,9 @@
             <div class="card-proyecto">
               <img [src]="item.img"  alt="">            
             <div class="card__title-proyecto">
-              <h2>{{item.title}}</h2>              
-              <p>{{item.lenguage}}</p>
+              <h2><strong>Titulo: </strong>{{item.title}}</h2>  
+              <p><strong>Descripcion: </strong>{{item.details}}</p>            
+              <p><strong>Lenguajes: </strong>{{item.lenguage}}</p>
               <div class="social">
                 <a href="{{item.url}}">
                   <i class="fab fa-github"></i>
@@ -22,14 +23,19 @@
               </div>                                      
             </div> 
             <div class="botones">
-              <button class="btn" (click)="eliminarExperiencia(item)">Elminar</button>        
+              <button type="button" *ngIf="usuarioAutenticado" class="btn btn-primary" data-bs-toggle="modal" 
+              data-bs-target="#modalUpdateExperiencia" (click)="mostrarExperiencia(item)">
+              Editar        
+              </button>
+              <button class="btn" *ngIf="usuarioAutenticado" (click)="eliminarExperiencia(item)">Elminar</button>        
             </div> 
            </div>
         </div>       
       </div>
+    
 
 
-      <!-- Modal -->
+      <!-- Modal Crear-->
 <div class="modal fade" id="modalExperienciaAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -108,13 +114,78 @@
     </div>
   </div>
 
-
-
-
-
-
-
-
-
-
+<!-- Modal Editar-->
+  <div class="modal fade" id="modalUpdateExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Experiencias</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">      
+          <form [formGroup]="formEditar">
+            <div class="mb-3"> 
+              <label for="title" class="form-label">Titulo</label>
+              <input type="text" class="form-control" id="title" formControlName="title"> 
+              <div *ngIf="title?.invalid && (title?.dirty || title?.touched)">
+                <div *ngIf="title?.errors?.['required']" class="text-danger">
+                   El Titulo es obligatoria
+                </div>
+              </div>
+              
+              <label for="details" class="form-label">Detalle</label>
+              <input type="text" class="form-control" id="details" formControlName="details"> 
+              <div *ngIf="details?.invalid && (details?.dirty || details?.touched)">
+                <div *ngIf="details?.errors?.['required']" class="text-danger">
+                  El Detalle es  Obligatorio.
+                </div>
+              </div>
+  
+              <label for="lenguage" class="form-label">Lenguaje</label>
+              <input type="text" class="form-control" id="lenguage" formControlName="lenguage"> 
+              <div *ngIf="lenguage?.invalid && (lenguage?.dirty || lenguage?.touched)">
+                <div *ngIf="lenguage?.errors?.['required']" class="text-danger">
+                  El lenguaje es  Obligatorio.
+                </div>
+              </div>
+            </div>                  
+            
+            <div class="mb-3">
+              <label for="img" class="form-label">URL de la imagen de Experiencia</label> 
+              <input type="text" class="form-control" id="img" formControlName="img">
+              <!--aca usamos las cajas de ngIf para que se muestren o no los msj abajo de la caja-->
+              <div *ngIf="img?.invalid && (img?.dirty || img?.touched)">
+                <div *ngIf="img?.errors?.['required']" class="text-danger">
+                  La url es obligatoria.
+                </div>
+              <div *ngIf="img?.errors?.['pattern']" class="text-danger">
+                El  formato de la url no es válida.
+              </div>
+            </div>
+            </div>    
+            <div class="mb-3">
+              <label for="url" class="form-label">URL del repositorio de GitHub</label> 
+              <input type="text" class="form-control" id="url" formControlName="url">
+              <!--aca usamos las cajas de ngIf para que se muestren o no los msj abajo de la caja-->
+              <div *ngIf="url?.invalid && (url?.dirty || url?.touched)">
+                <div *ngIf="url?.errors?.['required']" class="text-danger">
+                  La url es obligatoria.
+                </div>
+                <div *ngIf="url?.errors?.['pattern']" class="text-danger">
+                  El  formato de la url no es válida.
+                </div>
+              </div>
+            </div>                                 
+        </form>            
+      </div>
+          <div class="modal-footer">
+            <button type="button" id="cerrarModalExperiencia" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" (click)="modificarExperiencia()">Guardar</button>
+          </div>
+  
+        </div>
+        
+      </div>
     </div>
+
+  </div>

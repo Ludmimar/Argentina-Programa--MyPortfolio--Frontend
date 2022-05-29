@@ -13,7 +13,7 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 export class EducacionComponent implements OnInit {  
 
   educacion:Educacion[];  
-  usuarioAutenticado:boolean=true; 
+  usuarioAutenticado:boolean=false; 
   form:FormGroup;
   formEditar:FormGroup;
   constructor(
@@ -46,9 +46,13 @@ export class EducacionComponent implements OnInit {
   ngOnInit(): void {    
     this.miServicio.obtenerDatosEducacion().subscribe(data => { 
     console.log(data); 
-    this.educacion=data; 
-    
+    this.educacion=data;     
     })
+    let loguin = localStorage.getItem("loguin");
+      if (loguin == "ok")
+      {
+        this.usuarioAutenticado=true;
+      }
   }
 
   eliminarEducacion(item:Educacion)
@@ -77,7 +81,8 @@ export class EducacionComponent implements OnInit {
       this.miServicio.crearEducacion(edu).subscribe();     
       this.form.reset();          
       document.getElementById("cerrarModalEducacion")?.click();
-      window.history.back();
+      window.location.reload();
+      //window.history.back();
   }
   else
   { 
@@ -99,46 +104,28 @@ mostrarEducacion(item:Educacion){  //Boton
     
 modificarEducacion()
 {  
-  {
-    if (this.formEditar.valid) 
-    {
-      let edu=  {    
-        id: this.formEditar.get("id")?.value,
-        school: this.formEditar.get("school")?.value,
-        title: this.formEditar.get("title")?.value,
-        img: this.formEditar.get("img")?.value,
-        start: this.formEditar.get("start")?.value,
-        end: this.formEditar.get("end")?.value,
-        career: this.formEditar.get("career")?.value,
-        idPersona: this.formEditar.get("idPersona")?.value   
-      }    
-      this.miServicio.modificarEducacion(edu).subscribe();
-      this.formEditar.reset();    
-      document.getElementById("cerrarModalEducacion")?.click();
-      
+  if (this.formEditar.valid) { 
+    let edu=  {    
+      id: this.formEditar.get("id")?.value,
+      school: this.formEditar.get("school")?.value,
+      title: this.formEditar.get("title")?.value,
+      img: this.formEditar.get("img")?.value,
+      start: this.formEditar.get("start")?.value,
+      end: this.formEditar.get("end")?.value,
+      career: this.formEditar.get("career")?.value,
+      idPersona: this.formEditar.get("idPersona")?.value   
+    }  
+    this.miServicio.modificarEducacion(edu).subscribe();      
+    this.formEditar.reset();          
+    document.getElementById("cerrarModalEducacion")?.click();   
+    window.location.reload();
   }
   else
   { 
     this.formEditar.markAllAsTouched();
     alert("Hay campos no válidos");
-  }
-        
-  }
+  }        
 }
-  
-
-
- 
-    /*{
-    "id": 1,
-    "school": "UTN",
-    "title": "Tecnicatura en programacion",
-    "img": "https://github.com/Ludmimar/MyPortfolio/blob/master/src/assets/imagenes/utn.png?raw=true",
-    "career": "Analista de sistemas",
-    "start": 2013,
-    "end": 2015,
-    "idPersona": 1
-}*/
 
 get id(){    
   return this.form.get("id");
